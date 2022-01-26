@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-a74jww@g1k^(ekf$--l^f_##mr^79jo^)qk@b&+-y11z4fkmex
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,6 +85,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+DATABASES = {}
+
 if(len(env('DB_HOST'))):
     DATABASES = {
         'default': {
@@ -146,5 +148,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+    'http://localhost:8081',
+    'http://localhost:8080',
+    'http://localhost:3000',
 ]
